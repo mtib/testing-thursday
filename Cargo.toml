@@ -11,4 +11,4 @@ octocrab = "0.8.11"
 rocket = "0.4.7"
 dotenv = "0.15.0"
 serde = { version = "1.0.124", features = ["derive"] }
-rocket_contrib = { version = "0.4.7", default_features = false, features = ["tera_templates"] }
+rocket_contrib = { version = "0.4.7", default_features = false, features = ["tera_templates", "serve"] }

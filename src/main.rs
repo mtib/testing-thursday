@@ -5,6 +5,7 @@ use std::{ops::Deref, sync::atomic::AtomicUsize};
 
 use dotenv::dotenv;
 use rocket::State;
+use rocket_contrib::serve::StaticFiles;
 use rocket_contrib::templates::Template;
 use serde::{Deserialize, Serialize};
 
@@ -27,6 +28,7 @@ fn main() {
             counter: AtomicUsize::new(0),
         })
         .mount("/", routes![index])
+        .mount("/static", StaticFiles::from("./static"))
         .attach(Template::fairing())
         .launch();
 }
